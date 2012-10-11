@@ -50,7 +50,14 @@
               <li><%= link_to "Link1", "/path1"  %></li>
               <li><%= link_to "Link2", "/path2"  %></li>
               <li><%= link_to "Link3", "/path3"  %></li>
+              <li>
+                <%= form_tag({:controller => 'posts', :action => 'index' }, {:method => 'GET',:class => 'form-search'}) do %>
+                  <%= text_field_tag(:q, nil, :class => 'input-medium search-query') %>
+                  <%= submit_tag("Search", :class => 'btn') %>
+                <% end %>
+              </li>
             </ul>
+            
           </div><!--/.nav-collapse -->
         </div>
       </div>
