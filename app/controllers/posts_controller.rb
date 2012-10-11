@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   
   def index
+    Post.filter(params[:filter]) if params[:filter] 
+    
     puts 'FOOOOOO:' + params[:q] if params[:q]
     @posts = Post.all
   end
